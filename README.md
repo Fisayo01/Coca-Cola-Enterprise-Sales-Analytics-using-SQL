@@ -49,6 +49,9 @@ This project applies a wide range of SQL techniques, including:
 - Total revenue and profit generated
 - Average revenue by region and product category
 - Profit margin analysis
+- Calculated product revenue contribution percentages to identify key revenue drivers.
+- Analyzed customer purchase frequency using window functions to identify repeat buyers.
+
 
  **2. Product Performance Analysis**
  - Highest revenue-generating products
@@ -64,6 +67,8 @@ This project applies a wide range of SQL techniques, including:
 - Ranking product categories by revenue
 - Identifying above-average performing transactions
 - Top product and region combinations
+- Ranked products by revenue within each region to identify top-performing items across markets.
+- Compared individual product revenue against category averages to identify performance gaps.
 
 ## Example SQL Queries
 ### Average Revenue for Profitable vs Non-Profitable Transactions
@@ -83,7 +88,8 @@ group by
 - Certain regions contribute high revenue but lower profitability.
 - Profitability varies significantly across product categories.
 - Cost management plays a critical role in overall business performance.
+- Identified loyal customers.
 
-## Future Improvements
-Build Power BI dashboard
+
+
 
