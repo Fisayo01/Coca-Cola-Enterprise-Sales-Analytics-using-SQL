@@ -262,3 +262,32 @@ group by Category, region
 order by total_revenue
 limit 5;
 
+-- Shows which products perform best in each region.
+select region, Category, sum(revenue) as total_revenue, 
+rank() over(partition by region 
+order by sum(revenue) desc) as product_rank
+from transaction_details
+group by region,Category;
+
+-- Shows whether a product is performing above or below the category average.
+with performance_cte as
+(select brand, category, revenue, avg(revenue) over(partition by category) as category_avg,
+ revenue - avg(revenue) over(partition by category) as performance_diff
+from transaction_details
+)
+select*,
+case when (performance_diff) >=0 then "High"
+else "Low"
+end as performance_status 
+from performance_cte;
+
+-- Find Each Product’s Contribution to Total Sales
+select category, sum(revenue) as product_revenue, sum(revenue) * 100.0 /
+sum(sum(revenue)) OVER() AS revenue_percentage
+from transaction_details
+group by category;
+
+-- Identify Repeat Customers
+select Customer_ID, transaction_id, count(transaction_id) 
+over (partition by Customer_ID ) as customer_order_count
+from transaction_details;
