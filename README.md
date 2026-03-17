@@ -90,6 +90,10 @@ group by
 - Cost management plays a critical role in overall business performance.
 - Identified loyal customers.
 
+## Dashboard Preview
+
+<img width="913" height="1280" alt="Cocacola_dashboard" src="https://github.com/user-attachments/assets/8266cb7d-aaac-4153-a5fc-d75106423dcc" />
+
 
 
 
